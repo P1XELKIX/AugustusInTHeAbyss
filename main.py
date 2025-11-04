@@ -1,6 +1,6 @@
 # ignore this just makes sure it runs on school computers (you can also run these on
 # school computers; if you double click the python file they open in terminal and will 
-# run properly with full colour and stuff idrk why ¯\_(ツ)_/¯)
+# run properly with full colour and stuff idrk why )
 import subprocess
 subprocess.run(["pip", "install", "pygame", "rich", "progress", "playsound3"])
 
@@ -13,7 +13,7 @@ from rich import print
 console = Console()
 
 
-#Music - fades in music and looks badass while doing it  😎
+#Music - fades in music and looks badass while doing it  
 with console.status("[dark_slate_gray1]loadin...[/dark_slate_gray1]", spinner="line"):
     pygame.init
     pygame.mixer.init()

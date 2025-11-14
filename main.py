@@ -52,7 +52,7 @@ def moneyPrint(words):
             time.sleep(0.04)
 
 
-#
+# Spamtons shop pritnting
 def shopPrint(words):
     letters = list(words)
     for letter in letters:
@@ -61,7 +61,7 @@ def shopPrint(words):
             time.sleep(0.06)
 
 
-#
+# prints a lot faster
 def fastPrint(words):
     letters = list(words)
     for letter in letters:
@@ -70,7 +70,7 @@ def fastPrint(words):
             time.sleep(0.015)
 
 
-#
+# when printing question options
 def questionOptionPrint(words):
     letters = list(words)
     for letter in letters:
@@ -79,7 +79,7 @@ def questionOptionPrint(words):
             time.sleep(0.04)
 
 
-#
+# printing what the inputs could be for a question
 def questionPrint(words):
     letters = list(words)
     for letter in letters:
@@ -88,7 +88,7 @@ def questionPrint(words):
             time.sleep(0.06)
 
 
-#
+# printing titles
 def titlePrint(title):
     letters = list(title)
     for letter in letters:
@@ -99,7 +99,7 @@ def titlePrint(title):
             time.sleep(0.08)
 
 
-#
+# priniting less important titles
 def subTitlePrint(title):
     letters = list(title)
     for letter in letters:
@@ -108,7 +108,7 @@ def subTitlePrint(title):
             time.sleep(0.07)
 
 
-#
+# printing if an error occurs
 def errorPrint(words):
     letters = list(words)
     for letter in letters:
@@ -117,7 +117,7 @@ def errorPrint(words):
             time.sleep(0.1)
 
 
-#
+# when damage is recieved
 def damagePrint(words):
     letters = list(words)
     for letter in letters:
@@ -126,7 +126,7 @@ def damagePrint(words):
             time.sleep(0.1)
 
 
-#
+# when spamtons talking
 def spamtonPrint(words):
     letters = list(words)
     for letter in letters:
@@ -139,7 +139,7 @@ def spamtonPrint(words):
                 time.sleep(0.02)
 
 
-#
+# when tavern keeper talks
 def alucardPrint(words):
     letters = list(words)
     for letter in letters:
@@ -148,7 +148,7 @@ def alucardPrint(words):
             time.sleep(0.05)
 
 
-#
+# when the player can talk or do something
 def playerPrint(words):
     letters = list(words)
     for letter in letters:
@@ -157,7 +157,7 @@ def playerPrint(words):
             time.sleep(0.05)
 
 
-#
+# if you die or the game ends
 def gameEndPrint(words):
     letters = list(words)
     for letter in letters:

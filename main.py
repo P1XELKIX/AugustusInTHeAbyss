@@ -584,7 +584,7 @@ item and assign it value key (string name)
                     player_items.append("frayed bowtie")
                     money -= 60
                 else:
-                    ErrorPrint("not enough money")
+                    errorPrint("not enough money")
 
             elif answer == "health pot":
                 if money >= 30:

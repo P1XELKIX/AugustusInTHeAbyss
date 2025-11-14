@@ -26,8 +26,8 @@ console = Console()
 # stray variable cos needed in cool words
 skip = False
 
-# Cool Text - prints text letter by letter with diffrent colours and speeds
-def normal_print(words): # define function as normal print
+# Cool Text - prints text letter by letter with different colours and speeds
+def NormalPrint(words): # define function as normal print
     letters = list(words) # seperates word into list of letters
     for letter in letters: # for each letter print then delay repeat
         print (letter, end="", flush=True) # prints without moving to new line
@@ -35,7 +35,7 @@ def normal_print(words): # define function as normal print
             time.sleep(0.04) # how long the delay is per letter
 
 
-def item_print(words):
+def ItemPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[yellow3]{letter}[/yellow3]", end="")
@@ -43,7 +43,7 @@ def item_print(words):
             time.sleep(0.04)
 
 
-def money_print(words):
+def MoneyPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[orange3]{letter}[/orange3]", end="")
@@ -51,7 +51,7 @@ def money_print(words):
             time.sleep(0.04)
 
 
-def shop_print(words):
+def ShopPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[slate_blue1]{letter}[/slate_blue1]", end="")
@@ -59,7 +59,7 @@ def shop_print(words):
             time.sleep(0.06)
 
 
-def fast_print(words):
+def FastPrint(words):
     letters = list(words)
     for letter in letters:
         print (letter, end="", flush=True)
@@ -67,7 +67,7 @@ def fast_print(words):
             time.sleep(0.015)
 
 
-def question_options_print(words):
+def QuestionOptionPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[green4]{letter}[/green4]", end="")
@@ -75,7 +75,7 @@ def question_options_print(words):
             time.sleep(0.04)
 
 
-def question_print(words):
+def QuestionPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[spring_green3]{letter}[/spring_green3]", end="")
@@ -83,7 +83,7 @@ def question_print(words):
             time.sleep(0.06)
 
 
-def title_print(title):
+def TitlePrint(title):
     letters = list(title)
     for letter in letters:
         console.print (
@@ -93,7 +93,7 @@ def title_print(title):
             time.sleep(0.08)
 
 
-def subtitle_print(title):
+def subTitlePrint(title):
     letters = list(title)
     for letter in letters:
         console.print (f"[deep_sky_blue1]{letter}[/deep_sky_blue1]", end="")
@@ -101,7 +101,7 @@ def subtitle_print(title):
             time.sleep(0.07)
 
 
-def error_print(words):
+def ErrorPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[red3]{letter}[/red3]", end="")
@@ -109,7 +109,7 @@ def error_print(words):
             time.sleep(0.1)
 
 
-def damage_print(words):
+def DamagePrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[bright_red]{letter}[/bright_red]", end="")
@@ -117,7 +117,7 @@ def damage_print(words):
             time.sleep(0.1)
 
 
-def spamton_print(words):
+def SpamtonPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[sky_blue2]{letter}[/sky_blue2]", end="")
@@ -129,7 +129,7 @@ def spamton_print(words):
                 time.sleep(0.02)
 
 
-def grizly_print(words):
+def AlucardPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[orange_red1]{letter}[/orange_red1]", end="")
@@ -137,7 +137,7 @@ def grizly_print(words):
             time.sleep(0.05)
 
 
-def player_print(words):
+def PlayerPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[yellow2]{letter}[/yellow2]", end="")
@@ -145,7 +145,7 @@ def player_print(words):
             time.sleep(0.05)
 
 
-def game_end_print(words):
+def GameEndPrint(words):
     letters = list(words)
     for letter in letters:
         console.print (f"[red]{letter}[/red]", end="")
@@ -154,21 +154,21 @@ def game_end_print(words):
 
 # ask user to set volume
 volume_set = False
-while not volume_set: # while volume isnt set
-    question_options_print(
+while not volume_set: # while volume isn't set
+    QuestionOptionPrint(
         "How loud do you want the music? *100 is loud recommended %10"
         )
 
     volume = float(input("\n%")) # input volume as a float
 
     if 0 <= volume <= 100: # make sure volume is 0 - 100
-        question_options_print(f"\nSet volume to {volume}? ")
-        question_print("[Y/n]")
+        QuestionOptionPrint(f"\nSet volume to {volume}? ")
+        QuestionPrint("[Y/n]")
 
         answer = input("\n").strip().lower() # input 
 
         if answer == "y": # set volume
-            subtitle_print("\nVolume Set")
+            subTitlePrint("\nVolume Set")
             volume /= 100 # volume / 100 becaues pygame uses 0 to 1 for volume
             volume_set = True # exit while loop
 
@@ -176,9 +176,9 @@ while not volume_set: # while volume isnt set
             pass
         
         else: # not y/n
-            error_print("\nhuh?")
-    else: # number outside of 0 - 100 inputed
-        error_print("\nInvalid Volume")
+            ErrorPrint("\nhuh?")
+    else: # number outside of 0 - 100 inputted
+        ErrorPrint("\nInvalid Volume")
 
 
 # Music - changes music and shows loading spinner
@@ -197,25 +197,25 @@ with console.status( # show spinner while part below it is running
 
 
 
-fast_print( # ask if user wants to have text print instantly
+FastPrint( # ask if user wants to have text print instantly
     "\nDo you want the text to print instantly or do the really epic cool " 
     "printing where it prints it out slowly and is only for cool people? "
 )
-question_options_print("\nReally cool epic text? ")
-question_print("[Y/n]")
+QuestionOptionPrint("\nReally cool epic text? ")
+QuestionPrint("[Y/n]")
 
 answer = input("\n").lower().strip()
 
 if answer == "y":
-    normal_print("ty :)")
+    NormalPrint("ty :)")
 
 elif answer == "n":
-    error_print("aww :(")
+    ErrorPrint("aww :(")
     time.sleep(0.5)
     skip = True # removes delay
 
 else: # if they input anything that isnt y/n assume cool text print
-    error_print("error assuming you want the epic text mwuhahahaha")
+    ErrorPrint("error assuming you want the epic text mwuhahahaha")
 
 
 # Variable
@@ -232,13 +232,13 @@ player_stats = { # define stats
 player_items = ["stick"] # define items player has
 player_weapons = {} # define weapons player has
 money = 250 # define money on player
-in_shop = False # are they in shop?
+in_shop = False # are they in the shop?
 
-# do they want to print the adcenturers description, stats and weapons?
-question_options_print( 
-    "\nDo you want to display diffrent character and their"
+# Do they want to print the adventurers description, stats and weapons?
+QuestionOptionPrint( 
+    "\nDo you want to display different character and their"
     " stats/weapons ")
-question_print("[Y/n]")
+QuestionPrint("[Y/n]")
 
 answer = input("\n").lower().strip()
 
@@ -246,75 +246,75 @@ if  answer == "y":
 
 
 # Display characters and their items/stats
-    normal_print("\nChoose one of these four adventurers\n")
+    NormalPrint("\nChoose one of these four adventurers\n")
 
 # Warrior
-    title_print("\nWarrior")
-    fast_print( # warrior description
+    TitlePrint("\nWarrior")
+    FastPrint( # warrior description
         "\nWarrior have considerable strength and defense making them the "
-        "easiest to play while still being powerfull with a fairly even stat "
+        "easiest to play while still being powerful with a fairly even stat "
         "distribution"
         )
-    subtitle_print("\n\nStats")
-    fast_print( # warrior stats
+    subTitlePrint("\n\nStats")
+    FastPrint( # warrior stats
         "\nStrength - 16 Charisma - 14 Dexterity - 12 Perception - 14 "
         "Health - 130"
         )
-    subtitle_print("\n\nWeapons")
-    fast_print("\nLongsword\nDagger")
+    subTitlePrint("\n\nWeapons")
+    FastPrint("\nLongsword\nDagger")
 
 # Rouge
-    title_print("\n\nRouge")
-    fast_print( # rouge description
+    TitlePrint("\n\nRouge")
+    FastPrint( # rouge description
         "\nRouge has low strength and health but with high damage making them "
         "a difficult Character to play but powerful"
         )
-    subtitle_print("\n\nStats")
-    fast_print( # rouge stats
+    subTitlePrint("\n\nStats")
+    FastPrint( # rouge stats
         "\nStrength - 16 Charisma - 12 Dexterity - 18 Perception - 16 "
         "Health - 70"
         )
-    subtitle_print("\n\nWeapons")
-    fast_print("\nKatar\nDagger")
+    subTitlePrint("\n\nWeapons")
+    FastPrint("\nKatar\nDagger")
 
 # Barbarian
-    title_print("\n\nBarbarian")
-    fast_print( # barbarian description
+    TitlePrint("\n\nBarbarian")
+    FastPrint( # barbarian description
         "\nWith their high damage and low health the barbarian is a glass "
         "cannon dealing high damage but with little in ways of defense"
         )
-    subtitle_print("\n\nStats")
-    fast_print( # barbarian stats
+    subTitlePrint("\n\nStats")
+    FastPrint( # barbarian stats
         "\nStrength - 20 Charisma - 10 Dexterity - 12 Perception - 12 "
         "Health - 100"
         )
-    subtitle_print("\n\nWeapons")
-    fast_print("\nBattle axe\nHatchet")
+    subTitlePrint("\n\nWeapons")
+    FastPrint("\nBattle axe\nHatchet")
 
 # Paladin
-    title_print("\n\nPaladin")
-    fast_print( # paladin description
+    TitlePrint("\n\nPaladin")
+    FastPrint( # paladin description
         "\nPaladin has high defense and decent offense making it a powerful "
-        "combatant matched with good charisma although stleath will be off "
+        "combatant matched with good charisma although stealth will be off "
         "the table for the most part"
         )
-    subtitle_print("\n\nStats")
-    fast_print( # paladin stats
+    subTitlePrint("\n\nStats")
+    FastPrint( # paladin stats
         "\nStrength - 14 Charisma - 18 Dexterity - 6 Perception - 14 "
         "Health - 160"
         )
-    subtitle_print("\n\nWeapons")
-    fast_print("\nShort sword\nShield")
+    subTitlePrint("\n\nWeapons")
+    FastPrint("\nShort sword\nShield")
 
 elif answer == "n":
-    subtitle_print("\nskipped..")
+    subTitlePrint("\nskipped..")
 
 else:
-    error_print("error skiping anyway :)")
+    ErrorPrint("error skiping anyway :)")
 
 # Choose character
-subtitle_print("\n\nEnter a number to choose")
-question_options_print(
+subTitlePrint("\n\nEnter a number to choose")
+QuestionOptionPrint(
     "\n1) Warrior"
     "\n2) Rouge"
     "\n3) Barbarian"
@@ -327,24 +327,24 @@ def character_select(number, character):
     global your_character
 
     if answer == number: # checks their answer is the one for this character
-        question_options_print(f"You Choose {character}? ")
-        question_print("[Y/n]") # asks if right character
+        QuestionOptionPrint(f"You Choose {character}? ")
+        QuestionPrint("[Y/n]") # asks if right character
 
         check = input("\n").strip().lower()
 
         if check == "y": # if right set character and set character_chosen true
-            normal_print(f"Your class is now {character}\n")
+            NormalPrint(f"Your class is now {character}\n")
             character_chosen = True
             your_character = character
         elif check == "n": # if wrong character go back and ask again
             pass
         else: # if not y/n just go back and print error
-            error_print("error :/\n")
+            ErrorPrint("error :/\n")
 
 
 # Uses function ^ to confirm whether you chose the right character
 while not character_chosen:
-    question_print("which do you choose")
+    QuestionPrint("which do you choose")
 
     answer = int(input("\n"))
     character_select(1, "Warrior")
@@ -443,7 +443,7 @@ elif your_character == "Paladin":
     
 else: # if character isnt one of the 4 here somehow just exit program
       # cos it went wrong somewhere probably wont happen hopefully
-    error_print("huh? you shouldn't be here :/")
+    ErrorPrint("huh? you shouldn't be here :/")
     exit()
 # how to call from dictionary print(player_weapons["main"] [1] (0) )
 
@@ -454,10 +454,10 @@ with console.status(
    time.sleep(1)
 
 # Title - just words innit
-title_print("\nwelcome to BOBLIN\n\n")
+TitlePrint("\nwelcome to BOBLIN\n\n")
 
 # Opening - Prints into
-fast_print(
+FastPrint(
     "You approach  the town you'd been looking for the past 3 years it is an "
     "adventuring town built around the main landmark the great orouborus "
     "dungeon a seemingly endless maze with one grand door large enough to "
@@ -471,13 +471,13 @@ fast_print(
     )
 
 
-# Variables - change stats to multiplyers so i an just ad or take away them 
+# Variables - change stats to multipliers so i an just ad or take away them 
 # mult stat - 10 / 2 e.g strength = 14 | 14 - 10 / 2 | mult = 2 
 strength_mult = int((player_stats["strength"] - 10) / 2)
 charisma_mult = int((player_stats["charisma"] - 10) / 2)
 dexterity_mult = int((player_stats["dexterity"] - 10) / 2)
 perception_mult = int((player_stats["perception"] - 10) / 2)
-# variables - keep track of where youve been and how many times
+# variables - keep track of where you've been and how many times
 dungeon_visits = 0 # how many times been to dungeon
 tavern_visits = 0 # how many times been to tavern
 pluey_visits = 0 # how many times been to shop
@@ -498,13 +498,13 @@ def open_shop(): # define entering the shop use to open spamtons deals shop
     global approach # global approach so you can return to town after
 
     in_shop = True # set in shop true so while in shop loop repeats while there
-    spamton_print( # spamton talking
+    SpamtonPrint( # spamton talking
         "AND I HAVE JUST. "
         "\nTHE THING. "
         "\nYOU NEED. "
         "\nTHAT'S [[BARGAIN$]]."
         )
-    title_print("\n\nS͠P̷A͜M̴T̛O͞N͢'͠S͡ ̵$$D͜E͜A̷L̡Z̸$$ ͝S͠H͘O̢}") # title spamton shop
+    TitlePrint("\n\nS͠P̷A͜M̴T̛O͞N͢'͠S͡ ̵$$D͜E͜A̷L̡Z̸$$ ͝S͠H͘O̢}") # title spamton shop
 
     while in_shop: # shop loop
         for item in player_items: # for every item in players items
@@ -516,20 +516,20 @@ def open_shop(): # define entering the shop use to open spamtons deals shop
         print("")        
 
         if "broken sword" not in player_items: # if player doesnt have it
-            shop_print("\nTHE BIG ONE  [D£ 100]") # print item option
+            ShopPrint("\nTHE BIG ONE  [D£ 100]") # print item option
 
         if "frayed bowtie" not in player_items:
-            shop_print("\nBSHOT BOWTIE  [D£ 60]")
+            ShopPrint("\nBSHOT BOWTIE  [D£ 60]")
 
-        shop_print("\nH.POISON  [D£ 30]")
+        ShopPrint("\nH.POISON  [D£ 30]")
 
         if "silver key" not in player_items:
-            shop_print("\nSUPER KEY (ExTrEmE) [D£ 100]")
+            ShopPrint("\nSUPER KEY (ExTrEmE) [D£ 100]")
 
         # print how much money u got
-        money_print(f"\n\nYou Have D£ {money} Kromer") 
+        MoneyPrint(f"\n\nYou Have D£ {money} Kromer") 
 
-        subtitle_print("\n\nwould you like to buy anything?")
+        subTitlePrint("\n\nwould you like to buy anything?")
         
         """
 This part prints out each option step by step of the for loop below ☟
@@ -539,12 +539,12 @@ This part prints out each option step by step of the for loop below ☟
 'print(f"{num}{option}")' - print number of option and option
 'number_per_shop_item[num] = key' - set dictionary num_per_shop_item number of 
 item and assign it value key (string name)
-'print("[1 -> max]")' - prints the avaliable input options as between 1 and max
+'print("[1 -> max]")' - prints the available input options as between 1 and max
 """
         for num, (key, option) in enumerate(shop_options.items(), start = 1):
-            question_options_print(f"\n{num}) {option}")
+            QuestionOptionPrint(f"\n{num}) {option}")
             number_per_shop_item[num] = key
-        question_print(f" [1 -> {len(shop_options)}]")
+        QuestionPrint(f" [1 -> {len(shop_options)}]")
 
 
         answer = int(input("\n")) # input answer
@@ -555,52 +555,52 @@ item and assign it value key (string name)
             if answer == "broken sword": # answer is compared to each string
                 # if player has enough money and doesnt already have item
                 if (money >= 100 and "broken sword" not in player_items):
-                    subtitle_print("\nYou bought THE BIG ONE")
-                    money_print("\n- D£ 100")
-                    item_print("\n+ 1 broken sword")
+                    subTitlePrint("\nYou bought THE BIG ONE")
+                    MoneyPrint("\n- D£ 100")
+                    ItemPrint("\n+ 1 broken sword")
                     player_items.append("broken sword") # add to player_items
-                    money -= 100 # take 100 moeny as per price
+                    money -= 100 # take 100 money as per price
                 else: # if player doesnt have enough money
-                    error_print("not enough money")
+                    ErrorPrint("not enough money")
 
             elif answer == "frayed bowtie":
                 if (money >= 60 and "frayed bowtie" not in player_items):
-                    subtitle_print("\nYou bought BSHOT BOWTIE")
-                    money_print("\n- D£ 60")
-                    item_print("\n+ 1 frayed bowtie")
+                    subTitlePrint("\nYou bought BSHOT BOWTIE")
+                    MoneyPrint("\n- D£ 60")
+                    ItemPrint("\n+ 1 frayed bowtie")
                     player_items.append("frayed bowtie")
                     money -= 60
                 else:
-                    error_print("not enough money")
+                    ErrorPrint("not enough money")
 
             elif answer == "health pot":
                 if money >= 30:
-                    subtitle_print("\nYou bought H.POSION")
-                    money_print("\n- D£ 30")
-                    item_print("\n+ 1 health potion")
+                    subTitlePrint("\nYou bought H.POSION")
+                    MoneyPrint("\n- D£ 30")
+                    ItemPrint("\n+ 1 health potion")
                     player_items.append("health potion")
                     money -= 30
                 else:
-                    error_print("not enough money")
+                    ErrorPrint("not enough money")
 
             elif answer == "silver key":
                 if (money >= 100 and "silver key" not in player_items):
-                    subtitle_print("\nYou bought SUPER KEY (ExTrEmE")
-                    money_print("\n- D£ 100")
-                    item_print("\n+ 1 silver key")
+                    subTitlePrint("\nYou bought SUPER KEY (ExTrEmE")
+                    MoneyPrint("\n- D£ 100")
+                    ItemPrint("\n+ 1 silver key")
                     player_items.append("silver key")
                     money -= 100
                 else:
-                    error_print("not enough money")
+                    ErrorPrint("not enough money")
 
             elif answer == "leave":
-                normal_print(
-                    "you wander back wondering what those wierd items did"
+                NormalPrint(
+                    "you wander back wondering what those weird items did"
                     )
-                approach = 0 # retrun to town center
+                approach = 0 # return to town center
                 in_shop = False # exit while in_shop loop
         else:
-            error_print("invalid number")
+            ErrorPrint("invalid number")
 
 
 def open_tavern():
@@ -620,13 +620,13 @@ while alive:
         pygame.mixer.music.play(loops = -1, fade_ms = 2000)
         time.sleep(0.5)
     # select where to go
-   subtitle_print("\n\nChoose a number to travel : ")
-   question_options_print(
-        "\n1) Approach orouborus dungeon "
+   subTitlePrint("\n\nChoose a number to travel : ")
+   QuestionOptionPrint(
+        "\n1) Approach ouroboros dungeon "
         "\n2) Look in Grillbys "
         "\n3) Pluey? "
         )
-   question_print("\nWhere do you want to go?")
+   QuestionPrint("\nWhere do you want to go?")
 
    approach = int(input("\n"))
 
@@ -643,27 +643,27 @@ while alive:
             pygame.mixer.music.play(loops = -1, fade_ms = 1000)
             time.sleep(0.5)
 
-        subtitle_print(
-            "\nas you approach the dungeon you decide it isnt finished yet "
+        subTitlePrint(
+            "\nas you approach the dungeon you decide it isn't finished yet "
             "and pluey might have some [$DEAL$!] maybe"
             )
-        question_options_print("\nReturn to city center?")
-        question_print("[Y/n]")
+        QuestionOptionPrint("\nReturn to city center?")
+        QuestionPrint("[Y/n]")
 
         answer = input("\n").strip().lower()
 
         if answer == "y":
-            fast_print(
+            FastPrint(
                 "As you walk back you think it might be for the best but "
                 "maybe at a later time *cough cough nudge nudge wink wink"
                 )
             approach = 0
 
         elif answer == "n":
-            fast_print(
+            FastPrint(
                 "you decide to sit here and wait till the end of time maybe "
                 "your enjoying the music, maybe you are convinced theres more "
-                "but sadly i didnt have enough time but plueys definietly "
+                "but sadly i didnt have enough time but plueys definitely "
                 "really cool so maybe go there after re-loading this ??"
                 )
             while alive == True:
@@ -671,7 +671,7 @@ while alive:
                 time.sleep(1)
 
         else:
-            error_print(
+            ErrorPrint(
                 "oh no an error thats so sad well too bad you missed out on "
                 "all the dungeon content better luck next time"
                 )
@@ -693,7 +693,7 @@ while alive:
 
 
         if tavern_visits == 0:
-            fast_print(
+            FastPrint(
                 "You enter the tavern for the first time and are suddenly "
                 "blinded by a warm light. coming from the center of the bar."
                 "\nTables are scattered around the room as groups of "
@@ -701,38 +701,38 @@ while alive:
                 "and laughing over meals"
                 "\nA balcony spans the upper layer of the room looming over "
                 "parts of the tavern, carrying many shady looking people "
-                "along with body guards and a wierd purple glow "
+                "along with body guards and a weird purple glow "
                 )
-            subtitle_print("\nwhere would you like to go?")
-            question_options_print(
+            subTitlePrint("\nwhere would you like to go?")
+            QuestionOptionPrint(
                 "\n1) head towards bar"
                 "\n2) head upstairs"
                 "\n3) return to town square"
                 )
-            question_print("\n[1 -> 3]")
+            QuestionPrint("\n[1 -> 3]")
             answer = int(input("\n"))
             
             if answer == 1:
-                fast_print(
+                FastPrint(
                 "\nYou walk towards the bar where a large flaming bear shakes "
                 "what seems to be a very medieval cocktail shaker while "
                 "smoking an absurdly long churchwarden and donning a mighty "
                 "fedora with ear holes"
                 )
 
-                grizly_print(
+                AlucardPrint	(
                     "\nWell Well Well haven't seen you round these parts "
                     "before what could I do for you"
                     )
-                fast_print("\nThey say in a gruff new york accent")
-                player_print(
+                FastPrint("\nThey say in a gruff new york accent")
+                PlayerPrint(
                     '\n1) "I heard you sell meals and rooms"'
                     '\n2) "The people upstairs?"'
                     '\n3) "not included yet"'
                     '\n4) "not included yet"'
                     )
                 if pluey_visits >= 1:
-                    player_print('\n5) "Whats with plueys?"')
+                    PlayerPrint('\n5) "Whats with plueys?"')
                 answer = int(input("\n"))
                 if answer == 1:
                     pass
@@ -749,7 +749,7 @@ while alive:
             elif answer == 2:
                 pass
             elif answer == 3:
-                normal_print("you head back to town")
+                NormalPrint("you head back to town")
                 approach = 0
             
 
@@ -770,27 +770,27 @@ while alive:
 
         # If its their first time in pluey
         if pluey_visits == 0:
-            fast_print(
-                "You stuble into pluey not sure what to expect. Its cold and "
+            FastPrint(
+                "You stumble into pluey not sure what to expect. Its cold and "
                 "baren, the room is empty barring the rows of book shelves "
-                "lining the outer walls and single old oak desk centerd at "
-                "the then end of the room. it faces you but you can barely "
+                "lining the outer walls and single old oak desk centred at "
+                "the then end of the room. It faces you but you can barely "
                 "make out its shape as all that illuminates is the faint "
                 "glow from the open door behind you."
                 )
-            subtitle_print("\n\nDo you want to leave or look closer?")
-            question_options_print( # where go in Pluey?
+            subTitlePrint("\n\nDo you want to leave or look closer?")
+            QuestionOptionPrint( # where go in Pluey?
                 "\n1) leave and come back later "
                 "\n2) inspect table "
                 "\n3) items"
                 )
-            question_print("\nWhat do you do?")
+            QuestionPrint("\nWhat do you do?")
             
             answer = int(input("\n"))
 
             if  answer == 1: # try to leave pluey
-                damage_print("you attempt to leave ")
-                fast_print(
+                DamagePrint("you attempt to leave ")
+                FastPrint(
                     "and remember you left the door wide open allowing you "
                     "to leave with ease you decide to head back to the town "
                     "square "
@@ -806,58 +806,58 @@ while alive:
                     time.sleep(1)
                 # rolls die and returns num (number rolled + mult)
                 num = d20(perception_mult)
-                subtitle_print( # display dice rolled and what mult added
+                subTitlePrint( # display dice rolled and what mult added
                     f"you rolled: {num - perception_mult} "
                     f"+ your perception multiplier = {num} \n"
                     )
 
                 if num >= 10: # if rolled higher than 10 meet spamton
-                    fast_print(
+                    FastPrint(
                         "You notice looking at the table theirs a small "
-                        "white spike pertruding from behind the table and "
+                        "white spike protruding from behind the table and "
                         "decide to approach"
                         )
-                    fast_print(
+                    FastPrint(
                         "\nYou make out the shape of what looks to be an odd "
                         "looking man with a protruding nose "
                         "\nHe sits there for a second before blurting out in "
                         "a robotic voice"
                         )
-                    spamton_print(
+                    SpamtonPrint(
                         "\nAHHHH A NEW [slime] WHY BE THE [Little Sponge] WHO "
                         "HATES ITS [$4.99] LIFE WHEN YOU CAN BE A [BIG "
                         "SHOT!!!]. "
                         "\nWANNA BE A [[BIG SHOT?!?!]]"
                         )
-                    question_print(" [Y/n]") # want to be a big shot
+                    QuestionPrint(" [Y/n]") # want to be a big shot
 
                     answer = input("\n").strip().lower()
 
                    # get to see his silly strings regardless of what you choose
                     if answer == "y" or answer == "n": 
-                        spamton_print(
-                            "I KNEW YOU DIDNT WANT TO BE [the little slime] "
+                        SpamtonPrint(
+                            "I KNEW YOU DIDN'T WANT TO BE [the little slime] "
                             "YOU ARE NOW GRAB THIS BY THE [silly strings]"
                             )
-                        question_options_print(
+                        QuestionOptionPrint(
                             "\nWanna grab it by the silly strings?"
                             )
-                        question_print(" [Y/n]")
+                        QuestionPrint(" [Y/n]")
 
                         answer = input("\n").strip().lower() 
                         # grab by silly stings?
 
                         if answer == "y": # give item suspicious lever
-                            fast_print(
-                                "you pull the silly string he's layed out on "
-                                "the tabel and notice a lever attached to the "
+                            FastPrint(
+                                "you pull the silly string he's laid out on "
+                                "the table and notice a lever attached to the "
                                 "end of it. You take the lever and thank him "
                                 "uncertainly"
                                 )
-                            item_print("\n+ 1 Suspicious Lever")
+                            ItemPrint("\n+ 1 Suspicious Lever")
                             # add to inventory
                             player_items.append ("suspicious lever") 
-                            spamton_print(
+                            SpamtonPrint(
                                 "\nNO PROBLEM COME BACK FOR MORE [[Hyperlink "
                                 "Blocked]]"
                                 )
@@ -866,26 +866,26 @@ while alive:
 
                         # return to town without increasing visits
                         if answer == "n": 
-                            spamton_print(
+                            SpamtonPrint(
                                 "YOU WANT IT. YOU WANT [[Hyperlink Blocked]], "
                                 "DON'T YOU."
                                 )
-                            fast_print(
+                            FastPrint(
                                 "\nYour not sure and decide to leg it back to "
                                 "town hoping it isnt chasing you"
                                 )
                             approach = 0
 
                     else: # return to town
-                        fast_print(
+                        FastPrint(
                             "Your not sure and decide to leg it back to town "
-                            "hoping it isnt chasing you"
+                            "hoping it isn't chasing you"
                             )
                         approach = 0
 
                 else: # return to town
-                    fast_print(
-                        "You dont notice anything and decide to head back to "
+                    FastPrint(
+                        "You don't notice anything and decide to head back to "
                         "the town square "
                         )
                     approach = 0
@@ -900,21 +900,21 @@ while alive:
                 answer = input("Which do you choose? ").strip().lower()
 
                 if answer in player_items: # if item valid print cant use it
-                    normal_print("You can't use that here")
+                    NormalPrint("You can't use that here")
 
                 else: # if item not valid print error
-                    error_print(f"you dont have {answer}")
+                    ErrorPrint(f"you don't have {answer}")
 
             else: # if input not one of three 
-                error_print("err: invalid input")
+                ErrorPrint("err: invalid input")
 
         # If its their 2nd time in pluey
         elif pluey_visits == 1:
-            fast_print(
+            FastPrint(
                 "Your in pluey still confused from the last time you "
                 "were here"
                 )
-            question_print( # action options
+            QuestionPrint( # action options
                 "\n1) leave and come back later"
                 "\n2) inspect gap "
                 "\n3) items"
@@ -923,7 +923,7 @@ while alive:
             answer = int(input("\n")) # what do you do
 
             if  answer == 1: # return to town square
-                fast_print(
+                FastPrint(
                     "you leave and decide to head back to the town square "
                     )
                 approach = 0
@@ -935,19 +935,19 @@ while alive:
                     ):
                     time.sleep(1)
                 num = d20(perception_mult)
-                subtitle_print(
+                subTitlePrint(
                     f"you rolled: {num - perception_mult} "
                     f"+ your perception multiplier = {num}\n"
                     )
                 
                 if num >= 10:
-                    money_print("you think the space looks like it could house "
+                    MoneyPrint("you think the space looks like it could house "
                         "some sort of switch\n"
                         )
                     approach = 3
 
                 else:
-                    fast_print("you dont have a clue :/")
+                    FastPrint("you don't have a clue :/")
                     approach = 3
 
             elif answer == 3: # try use items in inventory
@@ -958,17 +958,17 @@ while alive:
                 if answer in player_items:
 
                     if answer == ("suspicious lever"):
-                        fast_print(
+                        FastPrint(
                             "You insert the lever into the slip gap and pull "
                             "it down "
                             "\nThe room lights up and you now see the "
                             "room a bit better you take a better look at the "
                             "man behind the counter. "
-                            "\nHe has paper white skin and luminecent yellow, "
+                            "\nHe has paper white skin and luminescent yellow, "
                             "pink glasses resting upon a long sharp nose "
                             "about a foot long"
                             )
-                        spamton_print(
+                        SpamtonPrint(
                             "\nHEY      EVERY      !! IT'S ME!!! EV3RY  BUDDY "
                             " 'S FAVORITE [[Number 1 Rated Salesman1997]] "
                             "SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN T "
@@ -976,10 +976,10 @@ while alive:
                             "\nWELL HAVE I GOT A [[Specil Deals]] FOR LONELY "
                             "[[Hearts]] LIKE YOU"
                             )
-                        question_options_print(
+                        QuestionOptionPrint(
                             "\nWant to see Spamtons [[specil Deals]] "
                             )
-                        question_print("[Y/n]")
+                        QuestionPrint("[Y/n]")
 
                         answer = input("\n").strip().lower()
 
@@ -988,7 +988,7 @@ while alive:
                             pluey_visits = 2
 
                         elif answer == "n":
-                            normal_print(
+                            NormalPrint(
                                 "It was probably for the best you left you "
                                 "thought, pondering to yourself as you wander "
                                 "back to the town"
@@ -997,24 +997,24 @@ while alive:
                             pluey_visits = 2
 
                         else: 
-                            error_print("err: invalid input")
+                            ErrorPrint("err: invalid input")
                             
                     else:
-                        normal_print("You can't use that here")
+                        NormalPrint("You can't use that here")
 
                 else:
-                    error_print(f"you dont have {answer}")
+                    ErrorPrint(f"you don't have {answer}")
 
             else: # error
-                error_print("err: invalid input")
+                ErrorPrint("err: invalid input")
 
         # If its their third time in pluey
         elif pluey_visits == 2:
-            fast_print(
+            FastPrint(
                 "You enter pluey again its much brighter than last time but "
                 "no cleaner and spamton looks like he hasn't moved since"
                 )
-            spamton_print(
+            SpamtonPrint(
                 "\nHEY      EVERY      !! IT'S ME!!! EV3RY  BUDDY  'S "
                 "FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. "
                 "SPAMTON!! WOAH!! IF IT ISN T YYOU AGA IN! HEY-HE Y HEY!!! "
@@ -1022,8 +1022,8 @@ while alive:
                 "\nWELL HAVE I GOT A [[Specil Deals]] FOR LONELY [[Hearts]] "
                 "LIKE YOURS"
                 )
-            question_options_print("\nWant to see Spamtons [[specil Deals]] ")
-            question_print("[Y/n]")
+            QuestionOptionPrint("\nWant to see Spamtons [[specil Deals]] ")
+            QuestionPrint("[Y/n]")
 
             answer = input("\n").strip().lower() # ask what you want to do
 
@@ -1031,7 +1031,7 @@ while alive:
                 open_shop()
 
             elif answer == "n": # return to town
-                normal_print("It was probably for the best you left you "
+                NormalPrint("It was probably for the best you left you "
                 "thought, pondering to yourself as you wander back to the town"
                 )
                 approach = 0
@@ -1039,4 +1039,4 @@ while alive:
 
 
 #Imma just break the loop if u die :/
-game_end_print("YOU DIED")
+GameEndPrint("YOU DIED")

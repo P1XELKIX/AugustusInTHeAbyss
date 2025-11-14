@@ -34,7 +34,7 @@ def normalPrint(words): # define function as normal print
             time.sleep(0.04) # how long the delay is per letter
 
 
-#
+# printed when an item is displayed
 def itemPrint(words):
     letters = list(words)
     for letter in letters:
@@ -43,7 +43,7 @@ def itemPrint(words):
             time.sleep(0.04)
 
 
-#
+# printed when displaying money
 def moneyPrint(words):
     letters = list(words)
     for letter in letters:
